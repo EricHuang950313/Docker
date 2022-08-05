@@ -1,0 +1,12 @@
+# docker-compose up
+# docker-compose down --rmi all -v
+version: "3.8"
+services:
+  api:
+    build: ./api
+    container_name: tutorial_myapp_nodemon
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./api:/app
+      - ./api/node_modules

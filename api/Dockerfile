@@ -38,12 +38,14 @@ WORKDIR /app
 # cache: COPY package.json .
 # cache: RUN npm install
 
-# COPY [source code from(relative path to Dockerfile)] [source code to in image(WORKDIR)]
-COPY . .
+COPY package*.json .
 
 # RUN is an image build step, the state of the container after a RUN command will be committed to the container image
 # a Dockerfile can have many RUN steps that layer on top of one another to build the image
 RUN npm install
+
+# COPY [source code from(relative path to Dockerfile)] [source code to in image(WORKDIR)]
+COPY . .
 
 # what port is going to expose by the container
 EXPOSE 4000
