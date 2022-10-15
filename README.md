@@ -53,7 +53,7 @@ Remove an image: docker image rm [image_name] -f(need to force if it is in use)
 Remove all: docker system prune -a
 ```
 
-### Commands: using docker-compose
+### Commands: using docker-compose.yaml
 ```
 Start: docker-compose up
 Stop: docker-compose down --rmi all -v
