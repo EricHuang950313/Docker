@@ -16,20 +16,45 @@
 > container is a box or a package that contains everything our application to run. It runs applications in isolated environments </br>
 > container/VMs: https://geekflare.com/docker-vs-virtual-machine/ </br>
 
-### Architecture
+### Pre-work
+1. npm init
+2. in package.json
+```
+"dependencies": {
+"cors": "^2.8.5",
+"express": "^4.17.2"
+}
+```
+```
+"scripts": {
+   "dev": "nodemon -L app.js"
+}
+```
+3. npm install
 
 
+### Commands: basic
+```
+Check images: docker images
+Check processes: docker ps -a(all)
+```
+```
+Create an image: docker build -t [image_name:certain_tag] [directory(relative path to Dockerfile)]
+Create a container: docker run --name [container_name] -p [computer_port:container_port] -d(detached mode) [image_name:certain_tag]
+Create a container with volumes: docker run --name [container_name] -p [computer_port:container_port] -rm(remove after stopped) -v [path_to_Dockerfile:path_to_conatiner] -v(anonymous volume: map to a folder managed by docker) [path_to_conatiner] [image_name:certain_tag]
+```
+```
+Start a container: docker start [container_name]
+Stop an container: docker stop [container_name]
+```
+```
+Remove a container: docker container rm [container_name]
+Remove an image: docker image rm [image_name] -f(need to force if it is in use)
+Remove all: docker system prune -a
+```
 
-
-
-
-> ``a.html`` - alert() </br>
-> ``b.html`` - comments, data, variables, operators, prompt() </br>
-> ``c.html`` - typeconvertion, isNAN(), ifelse, console.log() </br>
-> ``d.html`` - forloop, whileloop </br>
-> ``e.html`` ``f.html`` - function </br>
-> ``g.html`` ``h.html`` - object </br>
-> ``i.html`` ``j.html`` ``k.html`` ``m.html`` ``n.html`` - DOM </br>
-> ``o.html`` - JSON </br>
-> ``p.html`` - AJAX </br>
-> ``q.html`` - Hoisting </br>
+### Commands: using docker-compose
+```
+Start: docker-compose up
+Stop: docker-compose down --rmi all -v
+```
