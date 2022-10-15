@@ -1,6 +1,6 @@
 # [Docker](https://github.com/EricHuang950313/Docker)
 
-### Architecture
+### How Docker works
 > Dockerfile, a set of instructions to docker to create the image </br>
 > Dockerfile creates layers on an image </br>
 
