@@ -41,7 +41,7 @@ Check processes: docker ps -a(all)
 ```
 Create an image: docker build -t [image_name:certain_tag] [directory(relative path to Dockerfile)]
 Create a container: docker run --name [container_name] -p [computer_port:container_port] -d(detached mode) [image_name:certain_tag]
-Create a container with volumes: docker run --name [container_name] -p [computer_port:container_port] -rm(remove after stopped) -v [path_to_Dockerfile:path_to_conatiner] -v(anonymous volume: map to a folder managed by docker) [path_to_conatiner] [image_name:certain_tag]
+Create a container with volumes: docker run --name [container_name] -p [computer_port:container_port] --rm(remove after stopped) -v [absolute_path_to_Dockerfile:relative_path_to_conatiner] -v(anonymous volume: map to a folder managed by docker) [path_to_conatiner] [image_name:certain_tag]
 ```
 ```
 Start a container: docker start [container_name]
@@ -58,3 +58,5 @@ Remove all: docker system prune -a
 Start: docker-compose up
 Stop: docker-compose down --rmi all -v
 ```
+### Issues
+> Docker desktop will exit(0) docker container immediately after running: https://github.com/docker/for-win/issues/13242

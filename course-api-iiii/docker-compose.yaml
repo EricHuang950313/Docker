@@ -2,9 +2,9 @@ version: "3.8"
 services:
   api:
     build: ./api
-    container_name: tutorial_myapp_nodemon
+    container_name: course-api-iiii-container
     ports:
       - '4000:4000'
     volumes:
       - ./api:/app
-      - ./api/node_modules
+      - /app/node_modules
